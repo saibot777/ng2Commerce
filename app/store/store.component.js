@@ -16,10 +16,11 @@ var product_repository_1 = require("../model/product.repository");
 var StoreComponent = (function () {
     function StoreComponent(repository) {
         this.repository = repository;
+        this.selectedCategory = null;
     }
     Object.defineProperty(StoreComponent.prototype, "products", {
         get: function () {
-            return this.repository.getProducts();
+            return this.repository.getProducts(this.selectedCategory);
         },
         enumerable: true,
         configurable: true
@@ -31,6 +32,9 @@ var StoreComponent = (function () {
         enumerable: true,
         configurable: true
     });
+    StoreComponent.prototype.changeCategory = function (newCategory) {
+        this.selectedCategory = newCategory;
+    };
     StoreComponent = __decorate([
         core_1.Component({
             selector: "store",
