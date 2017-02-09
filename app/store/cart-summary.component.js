@@ -12,18 +12,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by stefan.trajkovic on 9.2.2017..
  */
 var core_1 = require("@angular/core");
-var product_repository_1 = require("./product.repository");
-var static_datasource_1 = require("./static.datasource");
-var cart_model_1 = require("./cart.model");
-var ModelModule = (function () {
-    function ModelModule() {
+var cart_model_1 = require("../model/cart.model");
+var CartSummaryComponent = (function () {
+    function CartSummaryComponent(cart) {
+        this.cart = cart;
     }
-    ModelModule = __decorate([
-        core_1.NgModule({
-            providers: [product_repository_1.ProductRepository, static_datasource_1.StaticDataSource, cart_model_1.Cart]
+    CartSummaryComponent = __decorate([
+        core_1.Component({
+            selector: "cart-summary",
+            moduleId: module.id,
+            templateUrl: 'cart-summary.component.html'
         }), 
-        __metadata('design:paramtypes', [])
-    ], ModelModule);
-    return ModelModule;
+        __metadata('design:paramtypes', [cart_model_1.Cart])
+    ], CartSummaryComponent);
+    return CartSummaryComponent;
 }());
-exports.ModelModule = ModelModule;
+exports.CartSummaryComponent = CartSummaryComponent;
