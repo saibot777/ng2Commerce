@@ -18,6 +18,9 @@ var model_module_1 = require("../model/model.module");
 var store_component_1 = require("./store.component");
 var counter_directive_1 = require("./counter.directive");
 var cart_summary_component_1 = require("./cart-summary.component");
+var cart_detail_component_1 = require("./cart-detail.component");
+var checkout_component_1 = require("./checkout.component");
+var router_1 = require("@angular/router");
 var StoreModule = (function () {
     function StoreModule() {
     }
@@ -26,14 +29,21 @@ var StoreModule = (function () {
             imports: [
                 model_module_1.ModelModule,
                 platform_browser_1.BrowserModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                router_1.RouterModule
             ],
             declarations: [
                 store_component_1.StoreComponent,
                 counter_directive_1.CounterDirective,
-                cart_summary_component_1.CartSummaryComponent
+                cart_summary_component_1.CartSummaryComponent,
+                cart_detail_component_1.CartDetailComponent,
+                checkout_component_1.CheckoutComponent
             ],
-            exports: [store_component_1.StoreComponent]
+            exports: [
+                store_component_1.StoreComponent,
+                checkout_component_1.CheckoutComponent,
+                cart_detail_component_1.CartDetailComponent
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], StoreModule);

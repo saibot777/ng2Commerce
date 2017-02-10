@@ -8,17 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/**
+ * Created by stefan.trajkovic on 9.2.2017..
+ */
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var CheckoutComponent = (function () {
+    function CheckoutComponent() {
     }
-    AppComponent = __decorate([
+    CheckoutComponent = __decorate([
         core_1.Component({
-            selector: "app",
-            template: "<router-outlet></router-outlet>"
+            template: "<div><h3 class=\"bg-info p-a-1\">Checkout Component</h3></div>"
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], CheckoutComponent);
+    return CheckoutComponent;
 }());
-exports.AppComponent = AppComponent;
+exports.CheckoutComponent = CheckoutComponent;
