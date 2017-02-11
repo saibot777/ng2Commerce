@@ -12,14 +12,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by stefan.trajkovic on 9.2.2017..
  */
 var core_1 = require("@angular/core");
+var cart_model_1 = require("../model/cart.model");
 var CartDetailComponent = (function () {
-    function CartDetailComponent() {
+    function CartDetailComponent(cart) {
+        this.cart = cart;
     }
     CartDetailComponent = __decorate([
         core_1.Component({
-            template: "\n        <div><h3 class=\"bg-info p-a-1\">Cart Detail Component</h3></div>\n    "
+            moduleId: module.id,
+            templateUrl: "cart-detail.component.html"
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [cart_model_1.Cart])
     ], CartDetailComponent);
     return CartDetailComponent;
 }());
