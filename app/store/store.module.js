@@ -8,17 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/**
- * Created by stefan.trajkovic on 9.2.2017..
- */
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var model_module_1 = require("../model/model.module");
 var store_component_1 = require("./store.component");
 var counter_directive_1 = require("./counter.directive");
-var cart_summary_component_1 = require("./cart-summary.component");
-var cart_detail_component_1 = require("./cart-detail.component");
+var cartsummary_component_1 = require("./cartsummary.component");
+var cartDetail_component_1 = require("./cartDetail.component");
 var checkout_component_1 = require("./checkout.component");
 var router_1 = require("@angular/router");
 var StoreModule = (function () {
@@ -26,24 +23,10 @@ var StoreModule = (function () {
     }
     StoreModule = __decorate([
         core_1.NgModule({
-            imports: [
-                model_module_1.ModelModule,
-                platform_browser_1.BrowserModule,
-                forms_1.FormsModule,
-                router_1.RouterModule
-            ],
-            declarations: [
-                store_component_1.StoreComponent,
-                counter_directive_1.CounterDirective,
-                cart_summary_component_1.CartSummaryComponent,
-                cart_detail_component_1.CartDetailComponent,
-                checkout_component_1.CheckoutComponent
-            ],
-            exports: [
-                store_component_1.StoreComponent,
-                checkout_component_1.CheckoutComponent,
-                cart_detail_component_1.CartDetailComponent
-            ]
+            imports: [model_module_1.ModelModule, platform_browser_1.BrowserModule, forms_1.FormsModule, router_1.RouterModule],
+            declarations: [store_component_1.StoreComponent, counter_directive_1.CounterDirective, cartsummary_component_1.CartSummaryComponent,
+                cartDetail_component_1.CartDetailComponent, checkout_component_1.CheckoutComponent],
+            exports: [store_component_1.StoreComponent, cartDetail_component_1.CartDetailComponent, checkout_component_1.CheckoutComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], StoreModule);

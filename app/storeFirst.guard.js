@@ -10,23 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var auth_service_1 = require("../model/auth.service");
-var AdminComponent = (function () {
-    function AdminComponent(auth, router) {
-        this.auth = auth;
+var store_component_1 = require("./store/store.component");
+var StoreFirstGuard = (function () {
+    function StoreFirstGuard(router) {
         this.router = router;
+        this.firstNavigation = true;
     }
-    AdminComponent.prototype.logout = function () {
-        this.auth.clear();
-        this.router.navigateByUrl("/");
+    StoreFirstGuard.prototype.canActivate = function (route, state) {
+        if (this.firstNavigation) {
+            this.firstNavigation = false;
+            if (route.component != store_component_1.StoreComponent) {
+                this.router.navigateByUrl("/");
+                return false;
+            }
+        }
+        return true;
     };
-    AdminComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            templateUrl: "admin.component.html"
-        }), 
-        __metadata('design:paramtypes', [auth_service_1.AuthService, router_1.Router])
-    ], AdminComponent);
-    return AdminComponent;
+    StoreFirstGuard = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [router_1.Router])
+    ], StoreFirstGuard);
+    return StoreFirstGuard;
 }());
-exports.AdminComponent = AdminComponent;
+exports.StoreFirstGuard = StoreFirstGuard;

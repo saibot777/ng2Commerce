@@ -14,38 +14,36 @@ var app_component_1 = require("./app.component");
 var store_module_1 = require("./store/store.module");
 var store_component_1 = require("./store/store.component");
 var checkout_component_1 = require("./store/checkout.component");
-var cart_detail_component_1 = require("./store/cart-detail.component");
+var cartDetail_component_1 = require("./store/cartDetail.component");
 var router_1 = require("@angular/router");
-var store_first_guard_1 = require("./store-first.guard");
+var storeFirst_guard_1 = require("./storeFirst.guard");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [
-                platform_browser_1.BrowserModule, store_module_1.StoreModule,
+            imports: [platform_browser_1.BrowserModule, store_module_1.StoreModule,
                 router_1.RouterModule.forRoot([
                     {
                         path: "store", component: store_component_1.StoreComponent,
-                        canActivate: [store_first_guard_1.StoreFirstGuard]
+                        canActivate: [storeFirst_guard_1.StoreFirstGuard]
                     },
                     {
-                        path: "cart", component: cart_detail_component_1.CartDetailComponent,
-                        canActivate: [store_first_guard_1.StoreFirstGuard]
+                        path: "cart", component: cartDetail_component_1.CartDetailComponent,
+                        canActivate: [storeFirst_guard_1.StoreFirstGuard]
                     },
                     {
                         path: "checkout", component: checkout_component_1.CheckoutComponent,
-                        canActivate: [store_first_guard_1.StoreFirstGuard]
+                        canActivate: [storeFirst_guard_1.StoreFirstGuard]
                     },
                     {
                         path: "admin",
                         loadChildren: "app/admin/admin.module#AdminModule",
-                        canActivate: [store_first_guard_1.StoreFirstGuard]
+                        canActivate: [storeFirst_guard_1.StoreFirstGuard]
                     },
                     { path: "**", redirectTo: "/store" }
-                ])
-            ],
-            providers: [store_first_guard_1.StoreFirstGuard],
+                ])],
+            providers: [storeFirst_guard_1.StoreFirstGuard],
             declarations: [app_component_1.AppComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 

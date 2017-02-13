@@ -8,9 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/**
- * Created by stefan.trajkovic on 12.2.2017..
- */
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var forms_1 = require("@angular/forms");
@@ -19,7 +16,12 @@ var auth_component_1 = require("./auth.component");
 var admin_component_1 = require("./admin.component");
 var routing = router_1.RouterModule.forChild([
     { path: "auth", component: auth_component_1.AuthComponent },
-    { path: "main", component: admin_component_1.AdminComponent },
+    {
+        path: "main", component: admin_component_1.AdminComponent,
+        children: [
+            { path: "**", redirectTo: "products" }
+        ]
+    },
     { path: "**", redirectTo: "auth" }
 ]);
 var AdminModule = (function () {
@@ -27,14 +29,9 @@ var AdminModule = (function () {
     }
     AdminModule = __decorate([
         core_1.NgModule({
-            imports: [
-                common_1.CommonModule,
-                forms_1.FormsModule,
-                routing
-            ],
-            declarations: [
-                auth_component_1.AuthComponent,
-                admin_component_1.AdminComponent]
+            imports: [common_1.CommonModule, forms_1.FormsModule, routing],
+            providers: [],
+            declarations: [auth_component_1.AuthComponent, admin_component_1.AdminComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AdminModule);

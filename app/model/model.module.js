@@ -8,9 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/**
- * Created by stefan.trajkovic on 9.2.2017..
- */
 var core_1 = require("@angular/core");
 var product_repository_1 = require("./product.repository");
 var static_datasource_1 = require("./static.datasource");
@@ -19,22 +16,16 @@ var order_model_1 = require("./order.model");
 var order_repository_1 = require("./order.repository");
 var rest_datasource_1 = require("./rest.datasource");
 var http_1 = require("@angular/http");
+var auth_service_1 = require("./auth.service");
 var ModelModule = (function () {
     function ModelModule() {
     }
     ModelModule = __decorate([
         core_1.NgModule({
             imports: [http_1.HttpModule],
-            providers: [
-                product_repository_1.ProductRepository,
-                cart_model_1.Cart,
-                order_model_1.Order,
-                order_repository_1.OrderRepository,
-                {
-                    provide: static_datasource_1.StaticDataSource,
-                    useClass: rest_datasource_1.RestDataSource
-                }
-            ]
+            providers: [product_repository_1.ProductRepository, cart_model_1.Cart, order_model_1.Order, order_repository_1.OrderRepository,
+                { provide: static_datasource_1.StaticDataSource, useClass: rest_datasource_1.RestDataSource },
+                rest_datasource_1.RestDataSource, auth_service_1.AuthService]
         }), 
         __metadata('design:paramtypes', [])
     ], ModelModule);

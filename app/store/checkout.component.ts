@@ -1,10 +1,7 @@
-/**
- * Created by stefan.trajkovic on 9.2.2017..
- */
-import { Component } from "@angular/core";
-import { NgForm } from '@angular/forms';
-import {OrderRepository} from "../model/order.repository";
-import {Order} from "../model/order.model";
+﻿import { Component } from "@angular/core";
+import { NgForm } from "@angular/forms";
+import { OrderRepository } from "../model/order.repository";
+import { Order } from "../model/order.model";
 
 @Component({
     moduleId: module.id,
@@ -16,7 +13,7 @@ export class CheckoutComponent {
     submitted: boolean = false;
 
     constructor(public repository: OrderRepository,
-                public order: Order) {}
+        public order: Order) { }
 
     submitOrder(form: NgForm) {
         this.submitted = true;

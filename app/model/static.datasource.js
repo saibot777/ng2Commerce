@@ -8,9 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/**
- * Created by stefan.trajkovic on 8.2.2017..
- */
 var core_1 = require("@angular/core");
 var product_model_1 = require("./product.model");
 var Observable_1 = require("rxjs/Observable");
@@ -30,6 +27,9 @@ var StaticDataSource = (function () {
             new product_model_1.Product(10, "Product 10", "Category 2", "Product 10 (Category 2)", 100),
             new product_model_1.Product(11, "Product 11", "Category 3", "Product 11 (Category 3)", 100),
             new product_model_1.Product(12, "Product 12", "Category 3", "Product 12 (Category 3)", 100),
+            new product_model_1.Product(13, "Product 13", "Category 3", "Product 13 (Category 3)", 100),
+            new product_model_1.Product(14, "Product 14", "Category 3", "Product 14 (Category 3)", 100),
+            new product_model_1.Product(15, "Product 15", "Category 3", "Product 15 (Category 3)", 100),
         ];
     }
     StaticDataSource.prototype.getProducts = function () {

@@ -1,7 +1,4 @@
-/**
- * Created by stefan.trajkovic on 12.2.2017..
- */
-import { NgModule } from "@angular/core";
+﻿import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
@@ -10,18 +7,18 @@ import { AdminComponent } from "./admin.component";
 
 let routing = RouterModule.forChild([
     { path: "auth", component: AuthComponent },
-    { path: "main", component: AdminComponent },
+    {
+        path: "main", component: AdminComponent,
+        children: [
+            { path: "**", redirectTo: "products" }
+        ]
+    },
     { path: "**", redirectTo: "auth" }
 ]);
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        routing
-    ],
-    declarations: [
-        AuthComponent,
-        AdminComponent]
+    imports: [CommonModule, FormsModule, routing],
+    providers: [],
+    declarations: [AuthComponent, AdminComponent]
 })
 export class AdminModule { }

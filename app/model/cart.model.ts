@@ -1,7 +1,4 @@
-/**
- * Created by stefan.trajkovic on 9.2.2017..
- */
-import { Injectable } from "@angular/core";
+﻿import { Injectable } from "@angular/core";
 import { Product } from "./product.model";
 
 @Injectable()
@@ -47,13 +44,15 @@ export class Cart {
             this.itemCount += l.quantity;
             this.cartPrice += (l.quantity * l.product.price);
         })
+
     }
 }
 
 export class CartLine {
-    constructor(
-        public product: Product,
-        public quantity: number) {}
+
+    constructor(public product: Product,
+        public quantity: number) { }
+
     get lineTotal() {
         return this.quantity * this.product.price;
     }

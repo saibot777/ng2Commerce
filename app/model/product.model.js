@@ -1,7 +1,4 @@
 "use strict";
-/**
- * Created by stefan.trajkovic on 8.2.2017..
- */
 var Product = (function () {
     function Product(id, name, category, description, price) {
         this.id = id;

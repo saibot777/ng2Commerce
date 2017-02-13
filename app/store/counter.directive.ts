@@ -1,19 +1,14 @@
-/**
- * Created by stefan.trajkovic on 9.2.2017..
- */
-import {
-    Directive, ViewContainerRef,
-    TemplateRef, Input,
-    Attribute, SimpleChanges
+﻿import {
+    Directive, ViewContainerRef, TemplateRef, Input, Attribute, SimpleChanges
 } from "@angular/core";
 
 @Directive({
     selector: "[counterOf]"
 })
 export class CounterDirective {
+
     constructor(private container: ViewContainerRef,
         private template: TemplateRef<Object>) {
-
     }
 
     @Input("counterOf")
@@ -23,7 +18,7 @@ export class CounterDirective {
         this.container.clear();
         for (let i = 0; i < this.counter; i++) {
             this.container.createEmbeddedView(this.template,
-            new CounterDirectiveContext(i + 1));
+                new CounterDirectiveContext(i + 1));
         }
     }
 }

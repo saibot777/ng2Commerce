@@ -9,23 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var cart_model_1 = require("./cart.model");
-var Order = (function () {
-    function Order(cart) {
-        this.cart = cart;
-        this.shipped = false;
+var rest_datasource_1 = require("./rest.datasource");
+require("rxjs/add/operator/map");
+var AuthService = (function () {
+    function AuthService(datasource) {
+        this.datasource = datasource;
     }
-    Order.prototype.clear = function () {
-        this.id = null;
-        this.name = this.address = this.city = null;
-        this.state = this.zip = this.country = null;
-        this.shipped = false;
-        this.cart.clear();
+    AuthService.prototype.authenticate = function (username, password) {
+        return this.datasource.authenticate(username, password);
     };
-    Order = __decorate([
+    Object.defineProperty(AuthService.prototype, "authenticated", {
+        get: function () {
+            return this.datasource.auth_token != null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    AuthService.prototype.clear = function () {
+        this.datasource.auth_token = null;
+    };
+    AuthService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [cart_model_1.Cart])
-    ], Order);
-    return Order;
+        __metadata('design:paramtypes', [rest_datasource_1.RestDataSource])
+    ], AuthService);
+    return AuthService;
 }());
-exports.Order = Order;
+exports.AuthService = AuthService;
