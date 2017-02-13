@@ -9,21 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /**
- * Created by stefan.trajkovic on 9.2.2017..
+ * Created by stefan.trajkovic on 13.2.2017..
  */
 var core_1 = require("@angular/core");
-var cart_model_1 = require("../model/cart.model");
-var CartDetailComponent = (function () {
-    function CartDetailComponent(cart) {
-        this.cart = cart;
+var ProductEditorComponent = (function () {
+    function ProductEditorComponent() {
     }
-    CartDetailComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            templateUrl: "cart-detail.component.html"
-        }), 
-        __metadata('design:paramtypes', [cart_model_1.Cart])
-    ], CartDetailComponent);
-    return CartDetailComponent;
+    ProductEditorComponent = __decorate([
+        core_1.Component({ template: "<div class=\"bg-info p-a-1\">                \n                                <h3>Product Editor Placeholder</h3>              \n                            </div>" }), 
+        __metadata('design:paramtypes', [])
+    ], ProductEditorComponent);
+    return ProductEditorComponent;
 }());
-exports.CartDetailComponent = CartDetailComponent;
+exports.ProductEditorComponent = ProductEditorComponent;
